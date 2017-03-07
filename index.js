@@ -1,6 +1,5 @@
 var visit = require('unist-util-visit')
 var remove = require('unist-util-remove')
-var parseClass = require('parse-class')
 
 module.exports = function remarkComponents (options) {
   options = options || {}
