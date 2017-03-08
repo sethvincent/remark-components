@@ -14,12 +14,9 @@ test('basic', function (t) {
 
   var components = {
     'component-name': function (data) {
-      // var attributes = Object.keys(data.attributes).map(function (key) {{
-      //   return `${key}="${data.attributes[key]}"`
-      // }})
-      // attributes = attributes.join(' ')
-
-      return bel`<div id="${data.properties.id}" class="${data.properties.class}">${data.body}</div>`.toString()
+      var el = bel`<div id="${data.properties.id}" class="${data.properties.class}">${data.body}</div>`
+      el.dataset = data.attributes
+      return el.toString()
     }
   }
 
